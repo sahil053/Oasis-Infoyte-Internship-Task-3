@@ -1,0 +1,26 @@
+function calculateTemp() {
+   function cf(celsius) {
+      var fahrenheit = Math.round((celsius * (9 / 5)) + 32);
+      return fahrenheit;
+   }
+
+   function fc(fahrenheit) {
+      var celsius = Math.round((fahrenheit - 32) * (5 / 9));
+      return celsius;
+   }
+   //Checks if Calsius or Fahrenheit is selected
+   var tempSelected = document.getElementById("temp_diff");
+   var valueTemp = tempSelected.options[tempSelected.selectedIndex].value;
+
+   // Checks the value inside the Temperature input
+   var Temp = document.getElementById("temp").value;
+   var result;
+
+   if (valueTemp == 1) {
+      result = cf(Temp);
+      document.getElementById("resultContainer").innerHTML = + result + "° Fahrenheit";
+   } else {
+      result = fc(Temp);
+      document.getElementById("resultContainer").innerHTML = + result + "° Celsius";
+   }
+}
